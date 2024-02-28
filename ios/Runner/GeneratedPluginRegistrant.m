@@ -96,6 +96,12 @@
 @import path_provider_foundation;
 #endif
 
+#if __has_include(<recaptcha_enterprise_flutter/RecaptchaEnterprisePlugin.h>)
+#import <recaptcha_enterprise_flutter/RecaptchaEnterprisePlugin.h>
+#else
+@import recaptcha_enterprise_flutter;
+#endif
+
 #if __has_include(<shared_preferences_foundation/SharedPreferencesPlugin.h>)
 #import <shared_preferences_foundation/SharedPreferencesPlugin.h>
 #else
@@ -132,6 +138,7 @@
   [FLTLibphonenumberPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTLibphonenumberPlugin"]];
   [OpenFilePlugin registerWithRegistrar:[registry registrarForPlugin:@"OpenFilePlugin"]];
   [PathProviderPlugin registerWithRegistrar:[registry registrarForPlugin:@"PathProviderPlugin"]];
+  [RecaptchaEnterprisePlugin registerWithRegistrar:[registry registrarForPlugin:@"RecaptchaEnterprisePlugin"]];
   [SharedPreferencesPlugin registerWithRegistrar:[registry registrarForPlugin:@"SharedPreferencesPlugin"]];
   [SqflitePlugin registerWithRegistrar:[registry registrarForPlugin:@"SqflitePlugin"]];
   [URLLauncherPlugin registerWithRegistrar:[registry registrarForPlugin:@"URLLauncherPlugin"]];
